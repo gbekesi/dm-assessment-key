@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    image: node:alpine
+    volumes:
+      - ./src:/app/src
+    environment:
+      - HOST=example.com
+      - TOKEN=<yourTokenWithoutBearer>
+    working_dir: /app/src
+    command: ["node", "index.js"]
